@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://shio-lab.bytesafe.dev/r/default/"
   },
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "A vue component for select date & time (by Chronotruck)",
   "author": "Louis Mazel <loic.mazuel@chronotruck.com>/suzuki@shio-lab.com",
   "scripts": {
