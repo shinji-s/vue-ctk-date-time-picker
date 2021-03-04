@@ -4,238 +4,23 @@
     :class="{'dark': darkMode}"
   >
     <div
-      id="vueCtkDateTimePicker"
+      id="CtkDateTimePicker"
       class="ctk-date-time-picker"
     >
-      <header>
-        <img
-          v-if="!darkMode"
-          src="./assets/logo.png"
-          alt="logo-chronotruck"
-        >
-        <img
-          v-else
-          src="./assets/logo-dark.png"
-          alt="logo-chronotruck-dark"
-        >
-        <h1>CtkDatetimePicker</h1>
-        <h3>A VueJs component for select date & time</h3>
-        <div
-          class="container lm-mt-4"
-        >
-          <a
-            class="lm-btn lm-btn-dark lm-mr-2"
-            target="_blank"
-            href="https://github.com/chronotruck/vue-ctk-date-time-picker"
-          >
-            Github
-          </a>
-          <a
-            class="lm-btn lm-btn-dark lm-mr-2"
-            target="_blank"
-            href="https://github.com/chronotruck/vue-ctk-date-time-picker/releases"
-          >
-            Changelog
-          </a>
-          <a
-            class="lm-btn lm-btn-danger"
-            target="_blank"
-            href="https://www.npmjs.com/package/vue-ctk-date-time-picker"
-          >
-            Npm
-          </a>
-        </div>
-        <button
-          class="lm-btn lm-btn-success"
-          @click="darkMode = !darkMode"
-        >
-          {{ darkMode ? 'Disable' : 'Enable' }} Dark Mode
-        </button>
-      </header>
-      <div
-        v-if="devMode"
-        class="container"
-      >
-        <div class="flex flex-wrap align-center justify-content-center">
-          <div
-            :class="{'dark': darkMode}"
-            class="component-container"
-          >
-            <p>Inititale value : '2018-04-05T04:26'</p>
-            <p>v-model = {{ value2 || 'null' }}</p>
-            <br>
-            <div class="flex">
-              <CtkDateTimePicker
-                v-model="value2"
-                color="purple"
-                :dark="darkMode"
-                locale="fr"
-                no-label
-                :format="'YYYY-MM-DD HH:mm'"
-                :min-date="'2018-04-05 12:15'"
-                :max-date="'2018-04-24 18:45'"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        v-else
-        class="container"
-      >
-        <div class="components-container flex flex-wrap">
-          <div
-            v-for="demo in demoComponents"
-            :key="demo.title"
-            :class="{'dark': darkMode}"
-            class="component-container"
-          >
-            <h3>{{ demo.title }}</h3>
-            <h4>{{ demo.description }}</h4>
-            <hr>
-            <div class="flex flex-wrap justify-content-between">
-              <p><b>Inititale value</b> : {{ demo.initial }}</p>
-              <p><b>v-model</b> = {{ demo.value || 'null' }}</p>
-            </div>
-            <hr>
-            <button
-              class="lm-btn option"
-              @click="demo.editOption = !demo.editOption"
-            >
-              Edit options
-            </button>
-            <div
-              v-show="demo.editOption"
-              class="flex flex-wrap component options"
-            >
-              <div class="flex-1">
-                <h4 style="margin-bottom: 10px;">
-                  String options
-                </h4>
-                <div
-                  v-for="str in stringOptions"
-                  :key="str"
-                  class="flex"
-                  style="margin-bottom: 10px;"
-                >
-                  <input
-                    v-model="demo.options[str]"
-                    type="text"
-                  >
-                  <span style="margin-left: 15px;">
-                    {{ str }}
-                  </span>
-                </div>
-                <h4 style="margin-bottom: 10px;">
-                  Integer options
-                </h4>
-                <div
-                  v-for="int in intOptions"
-                  :key="int"
-                  class="flex"
-                  style="margin-bottom: 10px;"
-                >
-                  <input
-                    v-model="demo.options[int]"
-                    type="number"
-                  >
-                  <span style="margin-left: 15px;">
-                    {{ int }}
-                  </span>
-                </div>
-              </div>
-              <div class="flex-1">
-                <h4 style="margin-bottom: 10px;">
-                  Boolean options
-                </h4>
-                <div
-                  v-for="opt in booleanOptions"
-                  :key="opt"
-                  class="flex"
-                  style="margin-bottom: 10px;"
-                >
-                  <CheckboxInput
-                    :id="`${demo.id}${opt}`"
-                    v-model="demo.options[opt]"
-                    :disabled="opt === 'onlyDate' || opt === 'onlyTime' || opt === 'range'"
-                  />
-                  <span style="margin-left: 15px;">
-                    {{ opt }} {{ opt === 'onlyDate' || opt === 'onlyTime' || opt === 'range' ? '(disabled)' : '' }}
-                  </span>
-                </div>
-              </div>
-              <div>
-                <h4 style="margin-bottom: 10px;">
-                  Options not editable (is Array)
-                </h4>
-                <span
-                  v-for="opt in optionsNotEditable"
-                  :key="opt"
-                >
-                  {{ opt + ', ' }}
-                </span>
-              </div>
-            </div>
-            <div class="component">
-              <CtkDateTimePicker
-                :id="demo.options.id"
-                v-model="demo.value"
-                :only-date="demo.options.onlyDate"
-                :only-time="demo.options.onlyTime"
-                :range="demo.options.range"
-                :format="demo.options.format"
-                :formatted="demo.options.formatted"
-                :output-format="demo.options.outputFormat"
-                :inline="demo.options.inline"
-                :color="demo.options.color"
-                :button-color="demo.options.buttonColor"
-                :no-header="demo.options.noHeader"
-                :label="demo.options.label"
-                :no-label="demo.options.noLabel"
-                :auto-close="demo.options.autoClose"
-                :error="demo.options.error"
-                :hint="demo.options.hint"
-                :open="demo.options.open"
-                :dark="darkMode || demo.options.dark"
-                :overlay="demo.options.overlay"
-                :position="demo.options.position"
-                :disabled="demo.options.disabled"
-                :disabled-dates="demo.options.disabledDates"
-                :disabled-hours="demo.options.disabledHours"
-                :enabled-dates="demo.options.enabledDates"
-                :minute-interval="demo.options.minuteInterval"
-                :first-day-of-week="demo.options.firstDayOfWeek"
-                :min-date="demo.options.minDate"
-                :max-date="demo.options.maxDate"
-                :no-weekends-days="demo.options.noWeekendDays"
-                :no-shortcuts="demo.options.noShortcuts"
-                :no-button="demo.options.noButton"
-                :button-now-translation="demo.options.buttonNowTranslation"
-                :no-button-now="demo.options.noButtonNow"
-                :locale="demo.options.locale"
-                :input-size="demo.options.inputSize"
-                :custom-shortcuts="demo.options.customShortcuts"
-                :persistent="demo.options.persistent"
-                :no-keyboard="demo.options.noKeyboard"
-                :no-value-to-custom-elem="demo.options.noValueToCustomElem"
-                :disabled-weekly="demo.options.disabledWeekly"
-                :right="demo.options.right"
-                :no-clear-button="demo.options.noClearButton"
-              >
-                <input
-                  v-if="demo.options && demo.options.slot && demo.options.slot.type === 'input'"
-                  type="text"
-                >
-                <button
-                  v-else-if="demo.options && demo.options.slot && demo.options.slot.type === 'button'"
-                  type="button"
-                  class="lm-btn"
-                  style="margin: 0;"
-                />
-              </CtkDateTimePicker>
-            </div>
-          </div>
-        </div>
+      <div id="time_picker">
+        <CtkDateTimePicker
+          v-model="reservationStartsAt"
+          :minute-interval="15"
+          format="YYYY-MM-DD HH:mm"
+          output-format="YYYY-MM-DD HH:mm"
+          formatted="MM-DD(ddd) HH:mm"
+          :disabled-hours="['02', '03']"
+          :disabled="autoRefresh"
+          :no-label="true"
+          :position-offset-x="'10px'"
+          input-size="md"
+          @validate="validateTimePick"
+        />
       </div>
     </div>
   </div>
@@ -243,12 +28,11 @@
 
 <script>
   import CtkDateTimePicker from './VueCtkDateTimePicker'
-  import CheckboxInput from './CheckboxInput'
 
   export default {
     name: 'App',
     components: {
-      CtkDateTimePicker, CheckboxInput
+      CtkDateTimePicker
     },
     data () {
       return {
@@ -260,7 +44,7 @@
         ],
         stringOptions: [
           'id', 'label', 'hint', 'color', 'buttonColor', 'position', 'format', 'formatted', 'outputFormat',
-          'minDate', 'maxDate', 'inputSize', 'buttonNowTranslation', 'disabledWeekly'
+          'minDate', 'maxDate', 'inputSize', 'buttonNowTranslation', 'disabledWeekly', 'positionOffsetX'
         ],
         optionsNotEditable: [
           'customShortcuts', 'disabledDates', 'disabledHours', 'locale'
@@ -517,4 +301,36 @@
     border-bottom: 0;
     margin: 20px 0;
   }
+
+  #undefined-picker-container-DatePicker {
+      width: 230px;
+  }
+  .datepicker-container {
+      width: 230px;
+  }
+  .calendar {
+      width: 225px;
+  }
+  .datepicker-controls {
+      width: 220px;
+  }
+  .week-days {
+      width: 220px;
+  }
+  .month-container {
+      width: 220px;
+  }
+  #undefined-input.field-input.no-clear-button {
+    padding: 0 6px;
+  }
+  div.time-picker {
+      width: 120px !important;
+      max-width: 120px !important;
+  }
+  div.datepicker {
+      width: 350px !important;
+      min-width: 350px !important;
+      max-width: 350px !important;
+  }
+
 </style>

@@ -201,7 +201,7 @@
     }
   }
 
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 320px) {
     .shortcuts-container:not(.inline) {
       width: 100%;
       max-width: 100%;

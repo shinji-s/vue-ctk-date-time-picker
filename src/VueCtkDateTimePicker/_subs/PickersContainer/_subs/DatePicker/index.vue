@@ -520,7 +520,7 @@
       }
     }
   }
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 320px) {
     .datepicker-container {
       width: 100%;
       &:not(.inline) {

@@ -276,12 +276,11 @@
       },
       onScrollHours: debounce(function (scroll) {
         const value = this.getValue(scroll)
-        const hour = this.isTwelveFormat
-					? this.apm
-						? this.apm.toLowerCase() === 'am'
-							? value + 1
-							: (value + 1 + 12)
-						:value
+        const hour = this.isTwelveFormat ? this.apm
+          ? this.apm.toLowerCase() === 'am'
+            ? value + 1
+            : (value + 1 + 12)
+          : value
           : value
         if (this.isHoursDisabled(hour)) return
         this.hour = hour === 24 && !this.isTwelveFormat ? 23 : hour
@@ -530,7 +529,7 @@
       }
     }
   }
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 320px) {
     .time-picker.inline {
       flex: auto;
       border-left: none;

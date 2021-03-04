@@ -1,8 +1,11 @@
 {
-  "name": "vue-ctk-date-time-picker",
-  "version": "2.5.0",
+  "name": "shio-lab-vue-ctk-date-time-picker",
+  "publishConfig": {
+    "registry": "https://shio-lab.bytesafe.dev/r/default/"
+  },
+  "version": "2.5.1",
   "description": "A vue component for select date & time (by Chronotruck)",
-  "author": "Louis Mazel <loic.mazuel@chronotruck.com>",
+  "author": "Louis Mazel <loic.mazuel@chronotruck.com>/suzuki@shio-lab.com",
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
     "serve:nuxt": "nuxt src",
@@ -23,28 +26,31 @@
     "delete:reports": "npm run delete-docs-report && npm run delete-dist-report"
   },
   "dependencies": {
-    "moment": "^2.24.0",
-    "moment-range": "^4.0.1",
-    "v-click-outside": "^2.0.2",
-    "vue": "^2.6.9"
+    "moment": "^2.29.1",
+    "moment-range": "^4.0.2",
+    "node-sass": "^4.14.1",
+    "v-click-outside": "^2.1.5",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-plugin-unit-jest": "^3.5.1",
-    "@vue/cli-service": "^3.2.2",
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-plugin-unit-jest": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "@vue/compiler-sfc": "^3.0.7",
     "@vue/eslint-config-standard": "^4.0.0",
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^1.1.3",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^23.6.0",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.11.0",
-    "nuxt": "^2.9.2",
-    "sass-loader": "^7.1.0",
-    "vue-cli-plugin-webpack-bundle-analyzer": "^1.2.0",
-    "vue-server-renderer": "^2.6.9",
+    "bili": "^5.0.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "nuxt": "^2.15.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass-loader": "^7.3.1",
+    "vue-cli-plugin-webpack-bundle-analyzer": "^1.4.0",
+    "vue-server-renderer": "^2.6.12",
     "vue-template-compiler": "^2.6.9"
   },
   "postcss": {
@@ -58,7 +64,7 @@
     "not ie <= 8"
   ],
   "bugs": {
-    "url": "https://github.com/chronotruck/vue-ctk-date-time-picker/issues"
+    "url": "https://github.com/shinji-s/vue-ctk-date-time-picker/issues"
   },
   "engines": {
     "node": ">= 6.0.0",
@@ -69,8 +75,9 @@
     "dist/",
     "nuxt/"
   ],
-  "homepage": "https://github.com/chronotruck/vue-ctk-date-time-picker/releases",
+  "homepage": "https://github.com/shinji-s/vue-ctk-date-time-picker/releases",
   "keywords": [
+    "shio-lab",
     "vue",
     "javascript",
     "vue-component",
@@ -85,10 +92,10 @@
     "timepicker"
   ],
   "license": "MIT",
-  "main": "dist/vue-ctk-date-time-picker.common.js",
+  "main": "dist/shio-lab-vue-ctk-date-time-picker.common.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chronotruck/vue-ctk-date-time-picker.git"
+    "url": "git+https://github.com/shinji-s/vue-ctk-date-time-picker.git"
   },
   "types": "dist/index.d.ts"
 }

@@ -71,6 +71,7 @@
       :no-keyboard="noKeyboard"
       :right="right"
       :behaviour="_behaviour"
+      :position-offset-x="positionOffsetX"
       @validate="validate"
       @close="closePicker"
     />
@@ -387,7 +388,7 @@
     }
   }
 
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 320px) {
     .time-picker-overlay {
       display: none;
     }

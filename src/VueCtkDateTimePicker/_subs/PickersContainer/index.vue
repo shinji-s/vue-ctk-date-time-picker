@@ -141,7 +141,8 @@
       customShortcuts: { type: Array, default: null },
       noKeyboard: { type: Boolean, default: false },
       right: { type: Boolean, default: false },
-      behaviour: { type: Object, default: () => ({}) }
+      behaviour: { type: Object, default: () => ({}) },
+      positionOffsetX: { type: String, default: null }
     },
     data () {
       return {
@@ -159,8 +160,8 @@
             : !this.range
               ? this.onlyDate
                 ? '260px'
-                : '420px'
-              : '400px'
+                : '320px'
+              : '320px'
         return {
           width: size,
           maxWidth: size,
@@ -171,11 +172,15 @@
         if (typeof window === 'undefined') return null
 
         return !this.inline
-          ? window.innerWidth < 412
+          ? window.innerWidth < 317
             ? null
             : this.position === 'bottom'
-              ? { top: '100%', marginBottom: '10px' }
-              : { bottom: '100%', marginTop: '10px' }
+              ? { top: '100%',
+                  marginBottom: '10px',
+                  marginLeft: this.positionOffsetX }
+              : { bottom: '100%',
+                  marginTop: '10px',
+                  marginLeft: this.positionOffsetX }
           : null
       },
       timeFormat () {
@@ -372,7 +377,7 @@
       background-color: white;
     }
   }
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 320px) {
     $header-size: 58px;
     $footer-size: 41px;
 

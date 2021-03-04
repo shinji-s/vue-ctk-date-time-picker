@@ -1,4 +1,9 @@
 <!-- ![vue-ctk-date-time-picker](./assets/logo_sticky.png) -->
+# Shio-lab VueCtkDateTimePicker
+
+> VueCtkDateTimePicker being modified by Shioiri-Laboratory.
+The following is README.md from the original repositry.
+
 
 # VueCtkDateTimePicker
 

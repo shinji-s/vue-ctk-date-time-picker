@@ -38,6 +38,7 @@ export default {
   noButtonNow: { type: Boolean, default: false },
   noButtonValidate: { type: Boolean, default: false },
   firstDayOfWeek: { type: Number, default: null },
+  positionOffsetX: { type: String, default: null },
   shortcut: { type: String, default: null },
   customShortcuts: {
     type: Array,
