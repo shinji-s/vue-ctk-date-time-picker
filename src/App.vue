@@ -19,7 +19,6 @@
           :no-label="true"
           :position-offset-x="'10px'"
           input-size="md"
-          @validate="validateTimePick"
         />
       </div>
     </div>
@@ -37,6 +36,8 @@
     data () {
       return {
         devMode: false,
+        reservationStartsAt: '2021-03-07 11:30',
+        autoRefresh: false,
         booleanOptions: [
           'noHeader', 'autoClose', 'error', 'dark', 'overlay', 'noWeekendDays', 'noShortcuts',
           'noButton', 'onlyDate', 'range', 'onlyTime', 'inline', 'persistent', 'disabled', 'noButtonNow', 'noValueToCustomElem',
