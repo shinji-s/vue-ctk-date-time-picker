@@ -107,6 +107,7 @@
 
 <script>
   import moment from 'moment'
+  import l10n from '../../../localize.js'
 
   export default {
     name: 'HeaderPicker',
@@ -142,7 +143,7 @@
         return this.dateTime.format('YYYY')
       },
       getDateFormatted () {
-        return this.dateTime.format('ddd D MMM')
+        return l10n.formatDatetime(this.dateTime)
       },
       isFormatTwelve () {
         return this.format ? (this.format.indexOf('a') > -1) || (this.format.indexOf('A') > -1) : false
